@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-apply plugin: 'walle'
+//apply plugin: 'walle'
 
 android {
 
@@ -37,10 +37,10 @@ android {
     signingConfigs {
 
         release {
-            keyAlias 'mmosite'
-            keyPassword 'mmosite20170430'
-            storeFile file('mmosite.jks')
-            storePassword 'mmosite2017'
+//            keyAlias ''
+//            keyPassword ''
+//            storeFile file('')
+//            storePassword ''
         }
 
     }
@@ -48,7 +48,7 @@ android {
     buildTypes {
 
         release {
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             zipAlignEnabled true
             minifyEnabled true
             shrinkResources true
@@ -95,15 +95,15 @@ android {
 
 }
 
-walle {
-
-    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
-    apkFileNameFormat = '${appName}-${packageName}-${channel}.apk'
-    //configFile与channelFile两者必须存在一个，否则无法生成渠道包。两者都存在时优先执行configFile
-    channelFile = new File("${project.getProjectDir()}/channel")
-    //configFile = new File("${project.getProjectDir()}/config.json")
-
-}
+//walle {
+//
+//    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+//    apkFileNameFormat = '${appName}-${packageName}-${channel}.apk'
+//    //configFile与channelFile两者必须存在一个，否则无法生成渠道包。两者都存在时优先执行configFile
+//    channelFile = new File("${project.getProjectDir()}/channel")
+//    //configFile = new File("${project.getProjectDir()}/config.json")
+//
+//}
 
 kapt {
     arguments {
@@ -126,7 +126,7 @@ dependencies {
         implementation project(':module')
     }
 
-    implementation rootProject.ext.walleLib
+//    implementation rootProject.ext.walleLib
 
     implementation rootProject.ext.appcompatV7
     implementation rootProject.ext.design
