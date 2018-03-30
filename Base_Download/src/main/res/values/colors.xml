@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="download_colorPrimary">#FD9DB8</color>
+    <color name="download_colorPrimaryDark">#FD9DB8</color>
+    <color name="download_colorAccent">#FC7299</color>
+
+</resources>

@@ -1,0 +1,19 @@
+<resources xmlns:stv="http://schemas.android.com/apk/res-auto">
+
+    <!-- Base application theme. -->
+    <style name="download_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/download_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/download_colorPrimaryDark</item>
+        <item name="colorAccent">@color/download_colorAccent</item>
+    </style>
+
+    <style name="download_AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="download_SplashTheme" parent="download_AppTheme.NoActionBar">
+        <!--<item name="android:windowBackground">@drawable/splash</item>-->
+    </style>
+</resources>

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jaeger.statusbaruitl:library-1.5.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.5.0.aar/baeca7e8673c904b9864582d7d86be2e/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.5.0.aar/baeca7e8673c904b9864582d7d86be2e/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jaeger.statusbaruitl/library/1.5.0/f0f9436802db6f8ba5465f4c45ac3ba9fa1003e4/library-1.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

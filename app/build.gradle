@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'walle'
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "lib.com.base"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 10000000
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        resourcePrefix "main_"
+
+//        jackOptions {
+//            enabled false
+//        }
+
+//        ndk {
+//            abiFilters "armeabi"
+//, "armeabi-v7a", "x86" // DO NOT MODIFY THIS LINE, IT'S UPDATED BY BUILD MACHINE AUTOMATICALLY.
+//        }
+
+    }
+
+    signingConfigs {
+
+        release {
+            keyAlias 'mmosite'
+            keyPassword 'mmosite20170430'
+            storeFile file('mmosite.jks')
+            storePassword 'mmosite2017'
+        }
+
+    }
+
+    buildTypes {
+
+        release {
+            signingConfig signingConfigs.release
+            zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    sourceSets {
+
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+
+    }
+
+//    productFlavors {
+//
+//        san {}
+//        baidu {}
+//        yingyongbao {}
+//        huawei {}
+//        lianxiang {}
+//        ali {}
+//        sougou {}
+//        vivo {}
+//        oppo {}
+//
+//    }
+
+//    productFlavors.all {
+//        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+//    }
+
+//    productFlavors {
+//        walleTest{}
+//    }
+
+}
+
+walle {
+
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+    apkFileNameFormat = '${appName}-${packageName}-${channel}.apk'
+    //configFile与channelFile两者必须存在一个，否则无法生成渠道包。两者都存在时优先执行configFile
+    channelFile = new File("${project.getProjectDir()}/channel")
+    //configFile = new File("${project.getProjectDir()}/config.json")
+
+}
+
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation project(':Lib_App')
+    implementation project(':Lib_Base')
+    implementation project(':Base_Download')
+
+    if (!isDebug.toBoolean()) {
+        implementation project(':module')
+    }
+
+    implementation rootProject.ext.walleLib
+
+    implementation rootProject.ext.appcompatV7
+    implementation rootProject.ext.design
+
+    implementation rootProject.ext.alibabaArouterApi
+    kapt rootProject.ext.alibabaArouter
+}

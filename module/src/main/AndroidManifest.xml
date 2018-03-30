@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.module.text">
+
+    <application
+        android:name=".debug.Module1Application"
+        android:allowBackup="true"
+        android:label="@string/module_app_name"
+        android:supportsRtl="true"
+        tools:replace="android:label"
+        android:theme="@style/BaseAppTheme.NoActionBar.SwipeBack">
+
+        <activity android:name=".AActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>

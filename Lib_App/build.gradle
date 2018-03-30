@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+
+        resourcePrefix "app_"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation rootProject.ext.appcompatV7
+    implementation rootProject.ext.design
+    implementation rootProject.ext.multidex
+    implementation rootProject.ext.kotlinStdlib
+
+    implementation rootProject.ext.alibabaArouterApi
+//    kapt rootProject.ext.alibabaArouter
+
+    implementation project(':Lib_Base')
+
+    implementation 'com.zhy:mpermission-api:1.0.0'
+    kapt 'com.zhy:mpermission-compiler:1.0.0'
+
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.alibaba:fastjson:1.1.64.android'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'com.kw:rxbus:1.0.2'
+
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    kapt  'com.github.bumptech.glide:compiler:4.6.1'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.6.1'
+}

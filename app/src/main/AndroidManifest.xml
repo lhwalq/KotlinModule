@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="lib.com.base">
+
+    <application
+        android:name="com.base.download.app.DownloadApplication"
+        android:icon="@mipmap/main_ic_launcher"
+        android:allowBackup="true"
+        android:label="@string/main_app_name"
+        android:theme="@style/BaseAppTheme.NoActionBar.SwipeBack"
+        tools:replace="android:label">
+
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/download_AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>

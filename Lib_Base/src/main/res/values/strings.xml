@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="base_builder_prompt">提示</string>
+    <string name="base_builder_determine">确定</string>
+
+    <string name="base_errormsg_cantopenimage">打开图片失败!!</string>
+    <string name="base_errormsg_cantplayaudio">播放音频失败!!</string>
+    <string name="base_errormsg_cantplayvedio">打开视频失败!!</string>
+    <string name="base_errormsg_cantopencamera">打开相机失败!!</string>
+    <string name="base_errormsg_cantopentaperecord">打开录音机失败!!</string>
+    <string name="base_errormsg_cantopenvideocamera">打开摄像机失败!!</string>
+    <string name="base_errormsg_cantopenbrowser">您没有安装浏览器,不能下载!!</string>
+    <string name="base_errormsg_cantopenandroidmarket_forinstall">亲,您木有安装第三方下载平台!</string>
+    <string name="base_errormsg_cantopenandroidmarket_forweb">您没有安装浏览器,无法打开网页!</string>
+    <string name="base_errormsg_cantopenandroidmarket_call">号码不对哦</string>
+
+    <string name="base_fwtitle_selectimage">选择图像</string>
+    <string name="base_fwtitle_selectaudio">选择音频</string>
+    <string name="base_fwtitle_selectvedio">选择视频</string>
+
+
+    <string name="base_loading">正在加载中...</string>
+
+    <string name="base_sdcard_path">/lib</string>
+
+</resources>
